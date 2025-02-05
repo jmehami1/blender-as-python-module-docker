@@ -206,6 +206,7 @@ python3 examples/compositing.py
 ## TODO
 
 - [ ] Figure out a way to build Cycles CUDA kernel during first container build
+- [ ] Reduce image size using multi-stage build and runtime packages
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 

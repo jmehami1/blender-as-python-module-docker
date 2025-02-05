@@ -18,12 +18,8 @@
 *** https://www.markdownguide.org/basic-syntax/#reference-style-links
 -->
 
-<!-- Find and replace all the following: 
-github username: jmehami1
-repo name:  probabilistic_light_source_modelling
--->
-
 <div align="center">
+
 [![Contributors][contributors-shield]][contributors-url]
 [![Forks][forks-shield]][forks-url]
 [![Stargazers][stars-shield]][stars-url]
@@ -58,6 +54,9 @@ repo name:  probabilistic_light_source_modelling
 - [Instructions to Build Docker Image](#instructions-to-build-docker-image)
 - [Running Docker Container](#running-docker-container)
 - [Examples](#examples)
+  - [Simple Render](#simple-render)
+  - [Multi File Renders](#multi-file-renders)
+  - [Compositing](#compositing)
 - [TODO](#todo)
 - [License](#license)
 - [Contact](#contact)
@@ -161,7 +160,47 @@ This will give the container network access through `--network host`flag. The --
 
 ## Examples
 
+These examples all use GPU rendering with OptiX.
 
+### Simple Render
+
+Plain simple render of a purple cube at a frontal view.
+
+```bash
+python3 examples/simple_render.py
+```
+
+<p align="center">
+
+<img src="./images/simple_render.png" alt="Docker Logo" width="50%" style="margin-right:2%;"/>
+</p>
+
+
+### Multi File Renders
+
+This example renders three scenes, each containing a different object, and saves the rendered images as separate files.
+
+<p align="center">
+<img src="./images/Scene_A_render.png" alt="Blender Logo" width="30%" style="margin-right:2%;"/>
+
+<img src="./images/Scene_B_render.png" alt="Docker Logo" width="30%" style="margin-right:2%;"/>
+
+<img src="./images/Scene_C_render.png" alt="NVIDIA Logo" width="30%" style="margin-right:2%;"/>
+</p>
+
+```bash
+python3 examples/multi_file_render.py
+```
+
+### Compositing
+
+This example renders three scenes, each containing a different object, and composites them together. It also saves a BLEND file and renders that as well. Expect two images which should be exactly the same as the one below.
+
+```bash
+python3 examples/compositing.py
+```
+
+<img src="./images/composite_render.png" alt="Docker Logo" width="90%" style="margin-right:2%;"/>
 
 
 ## TODO
@@ -190,11 +229,6 @@ Email: jasprabhjit.mehami@gmail.com
 
 * https://blender.stackexchange.com/questions/247436/blender-as-python-module-in-docker-container-how-to-build-cuda-kernels-only-onc
 
-* 
-* [Robotics Toolbox for MATLAB](https://github.com/petercorke/robotics-toolbox-matlab)
-
-* [YAML parser for MATLAB](https://github.com/ewiger/yamlmatlab)
-
   
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
@@ -204,19 +238,19 @@ Email: jasprabhjit.mehami@gmail.com
 
 
 
-[contributors-shield]: https://img.shields.io/github/contributors/jmehami1/Line-scan_Frame_Camera_Calibration.svg?style=plastic&logo=appveyor
-[contributors-url]: https://github.com/jmehami1/Line-scan_Frame_Camera_Calibration/graphs/contributors
-[forks-shield]: https://img.shields.io/github/forks/jmehami1/Line-scan_Frame_Camera_Calibration.svg?style=plastic&logo=appveyor
-[forks-url]: https://github.com/jmehami1/Line-scan_Frame_Camera_Calibration/network/members
-[stars-shield]: https://img.shields.io/github/stars/jmehami1/Line-scan_Frame_Camera_Calibration.svg?style=plastic&logo=appveyor
-[stars-url]: https://github.com/jmehami1/Line-scan_Frame_Camera_Calibration/stargazers
-[issues-shield]: https://img.shields.io/github/issues/jmehami1/Line-scan_Frame_Camera_Calibration.svg?style=plastic&logo=appveyor
-[issues-url]: https://github.com/jmehami1/Line-scan_Frame_Camera_Calibration/issues
+[contributors-shield]: https://img.shields.io/github/contributors/jmehami1/blender-as-python-module-docker.svg?style=plastic&logo=appveyor
+[contributors-url]: https://github.com/jmehami1/blender-as-python-module-docker/graphs/contributors
+[forks-shield]: https://img.shields.io/github/forks/jmehami1/blender-as-python-module-docker.svg?style=plastic&logo=appveyor
+[forks-url]: https://github.com/jmehami1/blender-as-python-module-docker/network/members
+[stars-shield]: https://img.shields.io/github/stars/jmehami1/blender-as-python-module-docker.svg?style=plastic&logo=appveyor
+[stars-url]: https://github.com/jmehami1/blender-as-python-module-docker/stargazers
+[issues-shield]: https://img.shields.io/github/issues/jmehami1/blender-as-python-module-docker.svg?style=plastic&logo=appveyor
+[issues-url]: https://github.com/jmehami1/blender-as-python-module-docker/issues
 
-[license-shield]: https://img.shields.io/github/license/jmehami1/Line-scan_Frame_Camera_Calibration
-[license-url]: https://github.com/jmehami1/Line-scan_Frame_Camera_Calibration/blob/master/LICENSE.txt
-[reposize-shield]: https://img.shields.io/github/repo-size/jmehami1/Line-scan_Frame_Camera_Calibration.svg?style=plastic&logo=appveyor
-[reposize-url]: https://github.com/jmehami1/Line-scan_Frame_Camera_Calibration
+[license-shield]: https://img.shields.io/github/license/jmehami1/blender-as-python-module-docker
+[license-url]: https://github.com/jmehami1/blender-as-python-module-docker/blob/master/LICENSE.txt
+[reposize-shield]: https://img.shields.io/github/repo-size/jmehami1/blender-as-python-module-docker.svg?style=plastic&logo=appveyor
+[reposize-url]: https://github.com/jmehami1/blender-as-python-module-docker
 
 
 

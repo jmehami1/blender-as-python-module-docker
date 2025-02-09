@@ -124,7 +124,7 @@ docker run -it --rm --network host -e NVIDIA_DRIVER_CAPABILITIES=graphics,comput
 6. Run a render using the Python script `simple_cube.py'. You will use this script to get the appropriate command to build Cycles CUDA kernel which will need to be copied to the Dockerfile
    
 ```bash
-python3 simple_cube.py
+python3 examples/multi_file_render.py
 ```
 7. You will see a message in your terminal as follows:
 
@@ -199,8 +199,9 @@ This example renders three scenes, each containing a different object, and compo
 ```bash
 python3 examples/compositing.py
 ```
-
+<p align="center">
 <img src="./images/composite_render.png" alt="Docker Logo" width="90%" style="margin-right:2%;"/>
+</p>
 
 
 ## TODO

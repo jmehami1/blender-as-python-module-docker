@@ -66,7 +66,7 @@ RUN cd blender_dir/blender && \
 # Copy NVIDIA OptiX SDK. Change to match folder name.
 # **********************************************************************************************************
 ARG OPTIX_DIR_NAME="NVIDIA-OptiX-SDK-8.0.0-linux64-x86_64"
-COPY OPTIX_DIR_NAME /optix
+COPY ${OPTIX_DIR_NAME} /optix
 
 # Build and configure OptiX
 RUN ln -fs /usr/lib/nvidia-cuda-toolkit/bin/g++ /usr/bin/g++ && \

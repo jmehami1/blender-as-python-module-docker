@@ -69,25 +69,34 @@ This repository provides a step by step guide to set up Blender as Python module
 
 ## Requirements
 
-- Linux based OS
-- NVIDIA RTX GPUs
+Hardware requirements are as follows:
+- Linux-based operating system (E.g. Ubuntu)
+- NVIDIA GPU with hardware ray tracing support
+- At-least 16 GB of storage
+
+Software requirements are as follows:
 - NVIDIA drivers
+- [NVIDIA CUDA Toolkit](https://developer.nvidia.com/cuda-toolkit) 
 - [Docker](https://docs.docker.com/engine/install/)
 - [NVIDIA Container Toolkit](https://www.gravee.dev/en/setup-nvidia-gpu-for-docker/#Install-Nvidia-Container-Toolkit)
-- At-least 16 GB of storage
+
+*NOTE: Please make sure to check the compatibility of the NVIDIA drivers with the CUDA Toolkit*
 
 ## Tested On
 
-- Ubuntu 20.04
+- Ubuntu 20.04 Host PC
 - NVIDIA GeForce RTX 3070 Ti
-- Driver Version: 555.58.02
+- NVIDIA Driver Version: 555.58.02
+- NVIDIA CUDA Toolkit 11.8
+- NVIDIA Container Toolkit 1.17.5-1
 - Docker version 27.5.1
 - Blender 4.3
 - Python 3.11
+- OPTIX 8.0.0
 
 ## Instructions to Build Docker Image
 
-Follow these instructions to build Docker image after cloning repository
+Follow these instructions to build Docker image after cloning repository 
 
 1. Download OptiX SDK OptiX from [here](https://developer.nvidia.com/designworks/optix/download). You will need to signup for a NVIDIA account (Google account) and join their developer program.
 2. Extract SDK and save into this directory. Note the name of the OptiX SDK folder.
@@ -117,10 +126,10 @@ docker build --build-arg BLENDER_BRANCH=v4.3.2 --build-arg BLENDER_VERSION_MAIN=
 docker run -it --rm --network host -e NVIDIA_DRIVER_CAPABILITIES=graphics,compute,utility  --runtime=nvidia --gpus all  --name blender_module --volume $(pwd):/workspace blender-module
 ```
 
-6. Run a render using the Python script `simple_cube.py'. You will use this script to get the appropriate command to build Cycles CUDA kernel which will need to be copied to the Dockerfile
+6. Run a render using the Python script `simple_render.py'. You will use this script to get the appropriate command to build Cycles CUDA kernel which will need to be copied to the Dockerfile
    
 ```bash
-python3 examples/multi_file_render.py
+python3 examples/simple_render.py
 ```
 7. You will see a message in your terminal as follows:
 
@@ -133,7 +142,7 @@ Copy the command from `"nvcc"` line. Example as follows:
 
 *NOTE: Your command should look slightly different*
 
-8. Paste the command into **line 131** of the `Dockerfile`. Do not edit any other lines.
+8. Paste the command into **line 129** of the `Dockerfile`. Do not edit any other lines.
 9. Build the image again:
 
 ```bash

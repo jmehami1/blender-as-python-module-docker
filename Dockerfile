@@ -120,14 +120,12 @@ RUN mkdir -p /root/.cache/cycles/kernels
 # **********************************************************************************************************
 # INSTRUCTIONS TO PRECOMPILE CYCLES CUDA KERNEL:
 #
-# 1. Build image with the following command commented out
-# 2. Run script simple_cube: python3 simple_cube.py
-# 3. The script should run a command to precompile Cycles CUDA kernel. Copy that command. It should look similar to the one commented out below
-# 4. Paste command. Make sure it is uncommented. Build image again.
+# 1. Build image with the command in line 128 commented out
+# 2. Run script simple_render: python3 examples/simple_render.py
+# 3. The script should run a command to precompile Cycles CUDA kernel. Copy that command. It should look similar to the obe below in line 128.
+# 4. Paste command to line 129. Make sure it is uncommented. Build image again.
 # **********************************************************************************************************
-# RUN nvcc -arch=$GPU_ARCH --cubin /blender_dir/build_linux_bpy/bin/bpy/${BLENDER_VERSION_MAIN}/scripts/addons_core/cycles/source/kernel/device/cuda/kernel.cu \
-# -o /root/.cache/cycles/kernels/cycles_kernel_sm_86_8493A57B417875175D335E518A599773.cubin -m64 --ptxas-options="-v" --use_fast_math -DNVCC \ 
-#     -I /blender_dir/build_linux_bpy/bin/bpy/${BLENDER_VERSION_MAIN}/scripts/addons_core/cycles/source -DWITH_NANOVDB
+# RUN "nvcc" -arch=compute_86 --ptx "/blender_dir/build_linux_bpy/bin/bpy/4.3/scripts/addons_core/cycles/source/kernel/device/optix/kernel.cu" -o "/root/.cache/cycles/kernels/cycles_kernel_compute_86_72F9B7E397DBBBD07FF7F6F1785B3326.ptx" -m64 --ptxas-options="-v" --use_fast_math -DNVCC -I"/blender_dir/build_linux_bpy/bin/bpy/4.3/scripts/addons_core/cycles/source" -DWITH_NANOVDB -I"/optix/include"
 # ***PASTE COMMAND HERE***
 
 WORKDIR /workspace

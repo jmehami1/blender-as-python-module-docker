@@ -53,6 +53,7 @@
   - [Simple Render](#simple-render)
   - [Multi File Renders](#multi-file-renders)
   - [Compositing](#compositing)
+  - [Compositing Animated](#compositing-animated)
 - [TODO](#todo)
 - [License](#license)
 - [Contact](#contact)
@@ -168,7 +169,7 @@ python3 examples/simple_render.py
 
 <p align="center">
 
-<img src="./images/simple_render.png" alt="Docker Logo" width="50%" style="margin-right:2%;"/>
+<img src="./images/simple_render.png" alt="Render of purple cube" width="50%" style="margin-right:2%;"/>
 </p>
 
 
@@ -177,11 +178,11 @@ python3 examples/simple_render.py
 This example renders three scenes, each containing a different object, and saves the rendered images as separate files.
 
 <p align="center">
-<img src="./images/Scene_A_render.png" alt="Blender Logo" width="30%" style="margin-right:2%;"/>
+<img src="./images/Scene_A_render.png" alt="Render of green sphere" width="30%" style="margin-right:2%;"/>
 
-<img src="./images/Scene_B_render.png" alt="Docker Logo" width="30%" style="margin-right:2%;"/>
+<img src="./images/Scene_B_render.png" alt="Render of red cube" width="30%" style="margin-right:2%;"/>
 
-<img src="./images/Scene_C_render.png" alt="NVIDIA Logo" width="30%" style="margin-right:2%;"/>
+<img src="./images/Scene_C_render.png" alt="Render of blue sphere" width="30%" style="margin-right:2%;"/>
 </p>
 
 ```bash
@@ -196,7 +197,18 @@ This example renders three scenes, each containing a different object, and compo
 python3 examples/compositing.py
 ```
 <p align="center">
-<img src="./images/composite_render.png" alt="Docker Logo" width="90%" style="margin-right:2%;"/>
+<img src="./images/composite_render.png" alt="Composited render of three objects" width="90%" style="margin-right:2%;"/>
+</p>
+
+### Compositing Animated
+This example renders three scenes, each containing a different object, composites them together, and renders multiple frames by randomly moving the objects. Expect rendered images saved to directory called `animation_example` and a MP4 of the images using [imageio](https://imageio.readthedocs.io/en/stable/).
+
+```bash
+python3 examples/compositing_animated.py
+```
+
+<p align="center">
+<img src="./images/composite_animation.gif" alt="Animated composite scene" width="90%" style="margin-right:2%;"/>
 </p>
 
 

@@ -33,7 +33,7 @@
 <p align="center">
 <img src="https://download.blender.org/branding/blender_logo_socket.png" alt="Blender Logo" width="30%" style="margin-right:2%;"/>
 
-<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4e/Docker_%28container_engine%29_logo.svg/512px-Docker_%28container_engine%29_logo.svg.png" alt="Docker Logo" width="30%" style="margin-right:2%;"/>
+<img src="https://upload.wikimedia.org/wikipedia/commons/8/89/Docker_Logo.svg" alt="Docker Logo" width="30%" style="margin-right:2%;"/>
 
 <img src="https://www.nvidia.com/content/dam/en-zz/Solutions/about-nvidia/logo-and-brand/01-nvidia-logo-vert-500x200-2c50-d.png" alt="NVIDIA Logo" width="30%" style="margin-right:2%;"/>
 </p>
